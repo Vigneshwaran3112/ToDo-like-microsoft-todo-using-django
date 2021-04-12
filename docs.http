@@ -1,0 +1,406 @@
+@BASE_URL = http://127.0.0.1:8000/
+@CONTENT_TYPE = application/json
+@TOKEN = Token 67766f1084a1aa9146c24d30b66698e979af9907
+
+
+###
+# USER LOGIN
+POST  {{ BASE_URL }}api-token-auth/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+
+{
+    "username": "vignesh",
+    "password": "vi"
+}
+
+
+###
+
+# USER TASKS
+GET  {{ BASE_URL }}task/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+
+###
+
+# USER TASK CREATE
+POST  {{ BASE_URL }}task/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+{
+    "status": true,
+    "task": "task 8",
+    "myday": true,
+    "starred": true,
+    "completed": false,
+    "remind": "2021-01-29T13:13:33.493469",
+    "due_date": "2021-01-29T13:13:33.493469",
+    "repeat": 3,
+    "addnotes": "task 2"
+}
+
+
+###
+
+# USER TASK UPDATE
+PUT  {{ BASE_URL }}task/3/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+{
+    "status": true,
+    "task": "task 8",
+    "myday": true,
+    "starred": true,
+    "completed": false,
+    "remind": "2021-01-29T13:13:33.493469",
+    "due_date": "2021-01-29T13:13:33.493469",
+    "repeat": 3,
+    "addnotes": "task 2",
+    "share": false
+}
+
+
+###
+
+# USER task-step
+GET  {{ BASE_URL }}task-step/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+{
+    "steps": "test step 2",
+    "task": 1
+}
+
+
+###
+
+# USER task-step update
+PUT  {{ BASE_URL }}task-step/2/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+{
+    "steps": "test step 2",
+    "task": 1
+}
+
+
+###
+
+# USER task-file
+GET  {{ BASE_URL }}task-file/ HTTP/1.1
+# Content-Type: multipart/form-data
+Authorization: {{ TOKEN }}
+
+
+
+###
+
+# USER task-file
+PUT  {{ BASE_URL }}task-file/1/ HTTP/1.1
+# Content-Type: multipart/form-data
+Authorization: {{ TOKEN }}
+
+{
+    "file": "files/files/Screenshot_from_2021-01-12_10-54-18.png",
+    "task": 3
+}
+
+
+###
+
+# USER TASK list
+GET  {{ BASE_URL }}task-list/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+###
+
+# USER TASK list
+PUT  {{ BASE_URL }}task-list/1/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+{
+    "task": "task 7",
+    "addsteps": [1],
+    "myday": true,
+    "starred": true,
+    "completed": false,
+    "remind": "2021-02-03T14:57:33.292160",
+    "due_date": "2021-02-03T14:57:33.292160",
+    "repeat": 3,
+    "addfile": [],
+    "addnotes": "task 21",
+    "delete": false,
+    "status": true,
+    "share": true
+  }
+
+
+###
+
+# USER group
+GET  {{ BASE_URL }}group/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+
+###
+
+# USER group create
+POST  {{ BASE_URL }}group/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+{   
+    "name": "test group 2"
+}
+
+
+###
+
+# USER group create
+PUT  {{ BASE_URL }}group/1/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+{   
+    "name": "test group 1",
+    "share": true
+}
+
+
+###
+
+# USER group-task
+GET  {{ BASE_URL }}group-task/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+
+###
+
+# USER group-task create
+POST  {{ BASE_URL }}group-task/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+{
+    "status": true,
+    "group": 1,
+    "task": "test group task 4",
+    "myday": true,
+    "starred": true,
+    "completed": false,
+    "remind": "2021-01-29T13:13:33.493469",
+    "due_date": "2021-01-29T13:13:33.493469",
+    "repeat": 3,
+    "addnotes": "task 2"
+}
+
+
+###
+
+# USER group-task update
+PUT  {{ BASE_URL }}group-task/1/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+{
+    "status": true,
+    "group": 1,
+    "task": "test group task 2",
+    "myday": true,
+    "starred": true,
+    "completed": false,
+    "remind": "2021-01-29T13:13:33.493469",
+    "due_date": "2021-01-29T13:13:33.493469",
+    "repeat": 3,
+    "addnotes": "task 2",
+    "share": true
+}
+
+
+###
+
+# USER group-task-step
+GET  {{ BASE_URL }}group-task-step/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+{
+    "steps": "test step 1",
+    "task": 1,
+    "group": 2
+}
+
+
+###
+
+# USER group-task-step update
+PUT  {{ BASE_URL }}group-task-step/2/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+{
+    "steps": "test step 2",
+    "task": 1,
+    "group": 2
+}
+
+
+###
+
+# USER group-task-file
+GET  {{ BASE_URL }}group-task-file/ HTTP/1.1
+# Content-Type: multipart/form-data
+Authorization: {{ TOKEN }}
+
+{
+    "file": "files/files/Screenshot_from_2021-01-12_10-54-18.png",
+    "task": 3
+}
+
+
+###
+
+# USER group-task-file
+PUT  {{ BASE_URL }}group-task-file/1/ HTTP/1.1
+# Content-Type: multipart/form-data
+Authorization: {{ TOKEN }}
+
+{
+    "file": "files/files/Screenshot_from_2021-01-12_10-54-18.png",
+    "task": 3
+}
+
+
+###
+
+# USER group-task-list
+GET  {{ BASE_URL }}group-task-list/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+# {   
+#     "name": "test group 2",
+#     "user": 2
+# }
+
+
+
+
+###
+
+# USER TASKS SHARE 
+GET  {{ BASE_URL }}task-link/54579426-a64c-450d-a162-a14f0ea6e42b/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+
+###
+
+# USER TASKS SHARE VIEW
+GET  {{ BASE_URL }}task-links/5/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+
+###
+
+# USER TASKS SHARE UPDATE
+PUT  {{ BASE_URL }}task-links/5/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+{
+  "delete": false,
+  "status": true,
+  "task": "task 9",
+  "addsteps": [],
+  "myday": true,
+  "starred": true,
+  "completed": false,
+  "remind": "2021-01-29T13:13:33.493469",
+  "due_date": "2021-01-29T13:13:33.493469",
+  "repeat": 3,
+  "addnotes": "task 22"
+}
+
+###
+
+# USER GROUP SHARE
+GET  {{ BASE_URL }}group-link/27835d42-a2cb-4ec2-a24d-3d81d21e7759/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+
+###
+
+# USER GROUP SHARE VIEW
+GET  {{ BASE_URL }}group-links/1/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+
+###
+
+# USER GROUP SHARE UPDATE
+PUT  {{ BASE_URL }}group-links
+
+{
+  "delete": false,
+  "status": true,
+  "group": 1,
+  "task": "task 7",
+  "myday": true,
+  "starred": true,
+  "completed": false,
+  "remind": "2021-01-29T13:13:33.493469",
+  "due_date": "2021-01-29T13:13:33.493469",
+  "repeat": 3,
+  "addnotes": "task 22"
+}
+
+
+###
+
+# USER GROUP TASKS SHARE
+GET  {{ BASE_URL }}group-task-link/260e9ff8-058b-4194-8c8c-406ce4543f51/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+
+###
+
+# USER GROUP TASK SHARE VIEW
+GET  {{ BASE_URL }}group-task-links/2/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+
+###
+
+# USER GROUP TASK SHARE UPDATE
+PUT  {{ BASE_URL }}group-task-links/2/ HTTP/1.1
+Content-Type: {{ CONTENT_TYPE }}
+Authorization: {{ TOKEN }}
+
+{
+  "group": 1,
+  "task": "test group task 2",
+  "steps": [],
+  "myday": true,
+  "starred": true,
+  "completed": false,
+  "remind": "2021-01-29T13:13:33.493469",
+  "due_date": "2021-01-29T13:13:33.493469",
+  "repeat": 3,
+  "addnotes": "task 29",
+  "addfiles": []
+}

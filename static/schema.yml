@@ -1,0 +1,1946 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /task/:
+    get:
+      operationId: listTasks
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+          description: ''
+      tags:
+      - task
+    post:
+      operationId: createTask
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Task'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+          description: ''
+      tags:
+      - task
+  /task/{id}/:
+    get:
+      operationId: retrieveTask
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+          description: ''
+      tags:
+      - task
+    put:
+      operationId: updateTask
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Task'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+          description: ''
+      tags:
+      - task
+    patch:
+      operationId: partialUpdateTask
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Task'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+          description: ''
+      tags:
+      - task
+    delete:
+      operationId: destroyTask
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - task
+  /task-step/:
+    get:
+      operationId: listTaskSteps
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskStep'
+          description: ''
+      tags:
+      - task-step
+    post:
+      operationId: createTaskStep
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskStep'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TaskStep'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TaskStep'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskStep'
+          description: ''
+      tags:
+      - task-step
+  /task-step/{id}/:
+    get:
+      operationId: retrieveTaskStep
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this task step.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskStep'
+          description: ''
+      tags:
+      - task-step
+    put:
+      operationId: updateTaskStep
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this task step.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskStep'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TaskStep'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TaskStep'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskStep'
+          description: ''
+      tags:
+      - task-step
+    patch:
+      operationId: partialUpdateTaskStep
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this task step.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskStep'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TaskStep'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TaskStep'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskStep'
+          description: ''
+      tags:
+      - task-step
+    delete:
+      operationId: destroyTaskStep
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this task step.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - task-step
+  /task-file/:
+    get:
+      operationId: listTaskFiles
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskFile'
+          description: ''
+      tags:
+      - task-file
+    post:
+      operationId: createTaskFile
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskFile'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TaskFile'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TaskFile'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskFile'
+          description: ''
+      tags:
+      - task-file
+  /task-file/{id}/:
+    get:
+      operationId: retrieveTaskFile
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this task file.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskFile'
+          description: ''
+      tags:
+      - task-file
+    put:
+      operationId: updateTaskFile
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this task file.
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TaskFile'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskFile'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskFile'
+          description: ''
+      tags:
+      - task-file
+    patch:
+      operationId: partialUpdateTaskFile
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this task file.
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TaskFile'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskFile'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskFile'
+          description: ''
+      tags:
+      - task-file
+    delete:
+      operationId: destroyTaskFile
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this task file.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - task-file
+  /task-list/:
+    get:
+      operationId: listTaskLists
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskList'
+          description: ''
+      tags:
+      - task-list
+  /task-list/{id}/:
+    get:
+      operationId: retrieveTaskList
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+          description: ''
+      tags:
+      - task-list
+    put:
+      operationId: updateTaskList
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TaskList'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskList'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+          description: ''
+      tags:
+      - task-list
+    patch:
+      operationId: partialUpdateTaskList
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TaskList'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskList'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+          description: ''
+      tags:
+      - task-list
+    delete:
+      operationId: destroyTaskList
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - task-list
+  /group/:
+    get:
+      operationId: listGroups
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Group'
+          description: ''
+      tags:
+      - group
+    post:
+      operationId: createGroup
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Group'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Group'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Group'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+          description: ''
+      tags:
+      - group
+  /group/{id}/:
+    get:
+      operationId: retrieveGroup
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+          description: ''
+      tags:
+      - group
+    put:
+      operationId: updateGroup
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Group'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Group'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Group'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+          description: ''
+      tags:
+      - group
+    patch:
+      operationId: partialUpdateGroup
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Group'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Group'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Group'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+          description: ''
+      tags:
+      - group
+    delete:
+      operationId: destroyGroup
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - group
+  /group-task/:
+    get:
+      operationId: listGroupTasks
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GroupTask'
+          description: ''
+      tags:
+      - group-task
+    post:
+      operationId: createGroupTask
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupTask'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GroupTask'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupTask'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTask'
+          description: ''
+      tags:
+      - group-task
+  /group-task/{id}/:
+    get:
+      operationId: retrieveGroupTask
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTask'
+          description: ''
+      tags:
+      - group-task
+    put:
+      operationId: updateGroupTask
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupTask'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GroupTask'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupTask'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTask'
+          description: ''
+      tags:
+      - group-task
+    patch:
+      operationId: partialUpdateGroupTask
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupTask'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GroupTask'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupTask'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTask'
+          description: ''
+      tags:
+      - group-task
+    delete:
+      operationId: destroyGroupTask
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - group-task
+  /group-task-step/:
+    get:
+      operationId: listGroupTaskSteps
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GroupTaskStep'
+          description: ''
+      tags:
+      - group-task-step
+    post:
+      operationId: createGroupTaskStep
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupTaskStep'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GroupTaskStep'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupTaskStep'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTaskStep'
+          description: ''
+      tags:
+      - group-task-step
+  /group-task-step/{id}/:
+    get:
+      operationId: retrieveGroupTaskStep
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this group task step.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTaskStep'
+          description: ''
+      tags:
+      - group-task-step
+    put:
+      operationId: updateGroupTaskStep
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this group task step.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupTaskStep'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GroupTaskStep'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupTaskStep'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTaskStep'
+          description: ''
+      tags:
+      - group-task-step
+    patch:
+      operationId: partialUpdateGroupTaskStep
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this group task step.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupTaskStep'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GroupTaskStep'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupTaskStep'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTaskStep'
+          description: ''
+      tags:
+      - group-task-step
+    delete:
+      operationId: destroyGroupTaskStep
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this group task step.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - group-task-step
+  /group-task-file/:
+    get:
+      operationId: listGroupTaskFiles
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GroupTaskFile'
+          description: ''
+      tags:
+      - group-task-file
+    post:
+      operationId: createGroupTaskFile
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupTaskFile'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTaskFile'
+          description: ''
+      tags:
+      - group-task-file
+  /group-task-file/{id}/:
+    get:
+      operationId: retrieveGroupTaskFile
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this group task file.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTaskFile'
+          description: ''
+      tags:
+      - group-task-file
+    put:
+      operationId: updateGroupTaskFile
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this group task file.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupTaskFile'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GroupTaskFile'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupTaskFile'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTaskFile'
+          description: ''
+      tags:
+      - group-task-file
+    patch:
+      operationId: partialUpdateGroupTaskFile
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this group task file.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupTaskFile'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GroupTaskFile'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupTaskFile'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTaskFile'
+          description: ''
+      tags:
+      - group-task-file
+    delete:
+      operationId: destroyGroupTaskFile
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this group task file.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - group-task-file
+  /group-task-list/:
+    get:
+      operationId: listGroupTaskLists
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GroupTaskList'
+          description: ''
+      tags:
+      - group-task-list
+  /group-task-list/{id}/:
+    get:
+      operationId: retrieveGroupTaskList
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTaskList'
+          description: ''
+      tags:
+      - group-task-list
+    put:
+      operationId: updateGroupTaskList
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupTaskList'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTaskList'
+          description: ''
+      tags:
+      - group-task-list
+    patch:
+      operationId: partialUpdateGroupTaskList
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupTaskList'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTaskList'
+          description: ''
+      tags:
+      - group-task-list
+    delete:
+      operationId: destroyGroupTaskList
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - group-task-list
+  /task-link/{invite_link}/:
+    get:
+      operationId: retrieveTaskShare
+      description: ''
+      parameters:
+      - name: invite_link
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskShare'
+          description: ''
+      tags:
+      - task-link
+  /task-links/{id}/:
+    get:
+      operationId: retrieveTaskShare
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskShare'
+          description: ''
+      tags:
+      - task-links
+    put:
+      operationId: updateTaskShare
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TaskShare'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskShare'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskShare'
+          description: ''
+      tags:
+      - task-links
+    patch:
+      operationId: partialUpdateTaskShare
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TaskShare'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskShare'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskShare'
+          description: ''
+      tags:
+      - task-links
+    delete:
+      operationId: destroyTaskShare
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - task-links
+  /group-link/{invite_link}/:
+    get:
+      operationId: retrieveGroupShare
+      description: ''
+      parameters:
+      - name: invite_link
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupShare'
+          description: ''
+      tags:
+      - group-link
+  /group-links/{id}/:
+    get:
+      operationId: retrieveGroupShare
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupShare'
+          description: ''
+      tags:
+      - group-links
+    put:
+      operationId: updateGroupShare
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupShare'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupShare'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupShare'
+          description: ''
+      tags:
+      - group-links
+    patch:
+      operationId: partialUpdateGroupShare
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupShare'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupShare'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupShare'
+          description: ''
+      tags:
+      - group-links
+    delete:
+      operationId: destroyGroupShare
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - group-links
+  /group-task-link/{invite_link}/:
+    get:
+      operationId: retrieveGroupTaskShare
+      description: ''
+      parameters:
+      - name: invite_link
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTaskShare'
+          description: ''
+      tags:
+      - group-task-link
+  /group-task-links/{id}/:
+    get:
+      operationId: retrieveGroupTaskShare
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTaskShare'
+          description: ''
+      tags:
+      - group-task-links
+    put:
+      operationId: updateGroupTaskShare
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupTaskShare'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupTaskShare'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTaskShare'
+          description: ''
+      tags:
+      - group-task-links
+    patch:
+      operationId: partialUpdateGroupTaskShare
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupTaskShare'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupTaskShare'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupTaskShare'
+          description: ''
+      tags:
+      - group-task-links
+    delete:
+      operationId: destroyGroupTaskShare
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - group-task-links
+  /api-token-auth/:
+    post:
+      operationId: createAuthToken
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AuthToken'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AuthToken'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthToken'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthToken'
+          description: ''
+      tags:
+      - api-token-auth
+security:
+  - ApiKeyAuth: []
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header 
+      name: Authorization
+  schemas:
+    Task:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        delete:
+          type: boolean
+        status:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        task:
+          type: string
+          maxLength: 100
+        myday:
+          type: boolean
+        starred:
+          type: boolean
+        completed:
+          type: boolean
+        remind:
+          type: string
+          format: date-time
+          nullable: true
+        due_date:
+          type: string
+          format: date-time
+          nullable: true
+        repeat:
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          type: integer
+          nullable: true
+        addnotes:
+          type: string
+          maxLength: 300
+        share:
+          type: boolean
+        task_uuid:
+          type: string
+          format: uuid
+          readOnly: true
+        user:
+          type: integer
+          nullable: true
+      required:
+      - task
+    TaskStep:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        delete:
+          type: boolean
+        status:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        steps:
+          type: string
+          maxLength: 30
+        user:
+          type: integer
+          nullable: true
+        task:
+          type: integer
+      required:
+      - steps
+      - task
+    TaskFile:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        delete:
+          type: boolean
+        status:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        file:
+          type: string
+          format: binary
+        user:
+          type: integer
+          nullable: true
+        task:
+          type: integer
+      required:
+      - file
+      - task
+    TaskList:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        delete:
+          type: boolean
+        status:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        task:
+          type: string
+          maxLength: 100
+        myday:
+          type: boolean
+        starred:
+          type: boolean
+        completed:
+          type: boolean
+        remind:
+          type: string
+          format: date-time
+          nullable: true
+        due_date:
+          type: string
+          format: date-time
+          nullable: true
+        repeat:
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          type: integer
+          nullable: true
+        addnotes:
+          type: string
+          maxLength: 300
+        share:
+          type: boolean
+        task_uuid:
+          type: string
+          format: uuid
+          readOnly: true
+        user:
+          type: integer
+          nullable: true
+      required:
+      - task
+    Group:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        delete:
+          type: boolean
+        status:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        group_uuid:
+          type: string
+          format: uuid
+          readOnly: true
+        share:
+          type: boolean
+        user:
+          type: integer
+          nullable: true
+      required:
+      - name
+    GroupTask:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        delete:
+          type: boolean
+        status:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        task:
+          type: string
+          maxLength: 100
+        myday:
+          type: boolean
+        starred:
+          type: boolean
+        completed:
+          type: boolean
+        remind:
+          type: string
+          format: date-time
+          nullable: true
+        due_date:
+          type: string
+          format: date-time
+          nullable: true
+        repeat:
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          type: integer
+          nullable: true
+        addnotes:
+          type: string
+          maxLength: 300
+        share:
+          type: boolean
+        group_task_uuid:
+          type: string
+          format: uuid
+          readOnly: true
+        group:
+          type: integer
+        user:
+          type: integer
+          nullable: true
+      required:
+      - task
+      - group
+    GroupTaskStep:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        delete:
+          type: boolean
+        status:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        steps:
+          type: string
+          maxLength: 30
+        user:
+          type: integer
+          nullable: true
+        group:
+          type: integer
+        task:
+          type: integer
+      required:
+      - steps
+      - group
+      - task
+    GroupTaskFile:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        delete:
+          type: boolean
+        status:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        file:
+          type: string
+          format: binary
+        user:
+          type: integer
+          nullable: true
+        task:
+          type: integer
+        group:
+          type: integer
+      required:
+      - file
+      - task
+      - group
+    GroupTaskList:
+      type: object
+      properties:
+        user:
+          type: integer
+          nullable: true
+        id:
+          type: integer
+          readOnly: true
+        group:
+          type: integer
+      required:
+      - group
+    TaskShare:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        delete:
+          type: boolean
+        status:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        invite_link:
+          type: string
+          maxLength: 255
+        user:
+          type: integer
+          nullable: true
+        task:
+          type: integer
+      required:
+      - invite_link
+      - task
+    GroupShare:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        delete:
+          type: boolean
+        status:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        invite_link:
+          type: string
+          maxLength: 255
+        user:
+          type: integer
+          nullable: true
+        group:
+          type: integer
+      required:
+      - invite_link
+      - group
+    GroupTaskShare:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        delete:
+          type: boolean
+        status:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        invite_link:
+          type: string
+          maxLength: 255
+        user:
+          type: integer
+          nullable: true
+        group_task:
+          type: integer
+      required:
+      - invite_link
+      - group_task
+    AuthToken:
+      type: object
+      properties:
+        username:
+          type: string
+          writeOnly: true
+        password:
+          type: string
+          writeOnly: true
+        token:
+          type: string
+          readOnly: true
+      required:
+      - username
+      - password
